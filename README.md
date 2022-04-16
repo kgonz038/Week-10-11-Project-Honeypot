@@ -7,25 +7,28 @@
 ### MHN-Admin Deployment (Required)
 
 **Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
+
 I used GCP and deployed it via the Google Cloud SDK shell. However, for the other SHH commands, the GCP client site was used in order to connect to the SHH.
 The created admin VM had the following attributes: Ubuntu 18.04 Minimal, HTTP traffic allowed (port 80), opened TCP ports 3000 and 10000 with some firewall rules
 
 <img src="mhn-admin.gif">
 
-Below displays the honeypot attacks that were recieved thus far since it was created about a week ago. This was documented in the MHN site by visiting the admin VM external IP. It received around 71,000+ attacks from various countries in about 8 days. The most attacked ports documented were ports 23 (6,000+ times), 6379 (200+ times), 21 (200+ times), 80 (100+ times), and 8088 (70+ times).
-
-<img src="mhn-admin-attacks.gif">
-
 ### Dionaea Honeypot Deployment (Required)
 
 **Summary:** Briefly in your own words, what does dionaea do?
+
 Dionaea is a honeypot that attracts attackers. Then once the honeypot is attacked, it catches (or traps) the payloads and malware of the attacks.
 
 <img src="dionaea-honeypot.gif">
 
+Below displays the honeypot attacks that were recieved thus far since it was created about a week ago. This was documented in the MHN site by visiting the admin VM external IP. It received around 71,000+ attacks from various countries in about 8 days. The most attacked ports documented were ports 23 (6,000+ times), 6379 (200+ times), 21 (200+ times), 80 (100+ times), and 8088 (70+ times).
+
+<img src="mhn-admin-attacks.gif">
+
 ### Database Backup (Required) 
 
 **Summary:** What is the RDBMS that MHN-Admin uses? What information does the exported JSON file record?
+
 It uses the MongoDB RDBMS as seen by the given command in order to access the json file: mongoexport --db mnemosyne --collection session > session.json
 
 The JSON file can be found here!: https://github.com/kgonz038/Week-10-11-Project-Honeypot/blob/main/session.json
