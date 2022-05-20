@@ -1,21 +1,21 @@
-# Honeypot Assignment
+# Cyber Security - Honeypot Project
 
 **Time spent:** **29** hours spent in total
 
 **Objective:** Create a honeynet using MHN-Admin. Present your findings as if you were requested to give a brief report of the current state of Internet security. Assume that your audience is a current employer who is questioning why the company should allocate anymore resources to the IT security team.
 
-### MHN-Admin Deployment (Required)
+### MHN-Admin Deployment
 
-**Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
+**Summary:** 
 
 I used GCP and deployed it via the Google Cloud SDK shell. However, for the other SHH commands, the GCP client site was used in order to connect to the SHH.
 The created admin VM had the following attributes: Ubuntu 18.04 Minimal, HTTP traffic allowed (port 80), opened TCP ports 3000 and 10000 with some firewall rules
 
 <img src="mhn-admin.gif">
 
-### Dionaea Honeypot Deployment (Required)
+### Dionaea Honeypot Deployment 
 
-**Summary:** Briefly in your own words, what does dionaea do?
+**Summary:** 
 
 Dionaea is a honeypot that attracts attackers. Then once the honeypot is attacked, it catches (or traps) the payloads and malware of the attacks.
 
@@ -25,9 +25,9 @@ Below displays the honeypot attacks that were recieved thus far since it was cre
 
 <img src="mhn-admin-attacks.gif">
 
-### Database Backup (Required) 
+### Database Backup 
 
-**Summary:** What is the RDBMS that MHN-Admin uses? What information does the exported JSON file record?
+**Summary:** 
 
 It uses the MongoDB RDBMS as seen by the given command in order to access the json file: mongoexport --db mnemosyne --collection session > session.json
 
@@ -37,11 +37,7 @@ Below is a gif of the JSON being created
 
 <img src="database-backup.gif">
 
-*Be sure to upload session.json directly to this GitHub repo/branch in order to get full credit.*
-
 ## Notes
-
-Describe any challenges encountered while doing the assignment.
 
 - 1st challenge was using the carrot symbol ^ in place of blackslashes \ when creating the VM via commands. It seems like the carrot symbol cut off or separated commands and caused errors in creations.
 - 2nd challenge was not realizing that it was required to document the entire proccess of the VM creations, thus I was only able to document proof of the VMs' existance in the GCP, their SHH connections and the MHN attack report site.
